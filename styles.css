@@ -543,7 +543,7 @@ img { max-width: 100%; display: block; }
   z-index: -3;
   background:
     linear-gradient(90deg, rgba(1,5,7,.86) 0%, rgba(1,5,7,.48) 48%, rgba(1,5,7,.16) 100%),
-    url('https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=2200&q=88') center/cover no-repeat;
+    url('images/artesano-04.jpg') 58% 48% / cover no-repeat;
   transform: scale(1.045) translate3d(calc(var(--hero-x, 0px) * .12), calc(var(--hero-y, 0px) * .10), 0);
   transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
 }
@@ -652,9 +652,9 @@ img { max-width: 100%; display: block; }
 }
 .text-link span { transition: transform .22s ease; }
 .text-link:hover span { transform: translateX(5px); }
-.image-frame { position: relative; min-height: 620px; overflow: hidden; border-radius: 2px; }
+.image-frame { position: relative; height: clamp(420px, 44vw, 520px); min-height: 0; overflow: hidden; border-radius: 2px; }
 .image-frame::after { content:""; position:absolute; inset:0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); pointer-events:none; }
-.image-frame img { width:100%; height:100%; min-height:620px; object-fit:cover; transform: scale(1.035); filter: saturate(.92) contrast(1.03); }
+.image-frame img { width:100%; height:100%; min-height:0; object-fit:cover; object-position:50% 46%; transform: scale(1.01); filter:saturate(.96) contrast(1.03); }
 .image-badge {
   position:absolute;
   left:0;
@@ -676,11 +676,11 @@ img { max-width: 100%; display: block; }
 .section-title.compact { margin-bottom: 38px; }
 .service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
 .service-card { overflow:hidden; background:#0a151b; border:1px solid rgba(255,255,255,.07); }
-.service-photo { min-height:320px; background-size:cover; background-position:center; filter:saturate(.9); transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s ease; }
+.service-photo { min-height:320px; background-size:cover; background-repeat:no-repeat; filter:saturate(.94) contrast(1.02); transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s ease; }
 .service-card:hover .service-photo { transform: scale(1.035); filter:saturate(1.03); }
-.service-photo-1 { background-image:url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1100&q=84'); }
-.service-photo-2 { background-image:url('https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1100&q=84'); }
-.service-photo-3 { background-image:url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=84'); }
+.service-photo-1 { background-image:url('images/artesano-04.jpg'); background-position:50% 48%; }
+.service-photo-2 { background-image:url('images/artesano-01.jpg'); background-position:50% 40%; }
+.service-photo-3 { background-image:url('images/artesano-03.jpg'); background-position:50% 55%; }
 .service-card-body { position:relative; min-height:290px; padding:30px; }
 .service-number { color:var(--teal); font-size:10px; font-weight:800; letter-spacing:.16em; }
 .service-card h3 { margin:12px 0 14px; font-size:27px; }
@@ -702,7 +702,7 @@ img { max-width: 100%; display: block; }
   z-index:-2;
   background:
     linear-gradient(90deg,rgba(2,7,10,.84),rgba(2,7,10,.38) 62%,rgba(2,7,10,.62)),
-    url('https://images.unsplash.com/photo-1562059390-a761a084768e?auto=format&fit=crop&w=2200&q=88') center/cover no-repeat;
+    url('images/artesano-02.jpg') left top / 200% 200% no-repeat;
 }
 .feature-band::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(to top,#03090c 0%,transparent 25%,transparent 72%,#071015 100%); }
 .feature-band-content { width:min(760px,100%); padding:90px clamp(22px,6vw,86px); }
@@ -710,14 +710,118 @@ img { max-width: 100%; display: block; }
 .feature-band-content > p:not(.eyebrow) { max-width:650px; color:#d0d8db; line-height:1.75; }
 .feature-band .button { margin-top:24px; }
 
-.gallery-section { background:#03090c; }
-.gallery-grid { display:grid; grid-template-columns:repeat(12,1fr); grid-auto-rows:250px; gap:14px; }
-.gallery-item { margin:0; overflow:hidden; min-width:0; grid-column:span 5; }
-.gallery-item:nth-child(2), .gallery-item:nth-child(3) { grid-column:span 7; }
-.gallery-item.gallery-tall { grid-row:span 2; }
-.gallery-item.gallery-wide { grid-column:6 / -1; }
-.gallery-item img { width:100%; height:100%; object-fit:cover; filter:saturate(.88); transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s ease; }
-.gallery-item:hover img { transform:scale(1.035); filter:saturate(1.03); }
+/* =========================================================
+   PROFESSIONAL 2x2 GALLERY
+   ========================================================= */
+
+.gallery-section {
+  background: #03090c;
+}
+
+.gallery-grid {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.gallery-item {
+  margin: 0;
+
+  width: 100%;
+  height: 420px;
+
+  overflow: hidden;
+
+  background: #071015;
+
+  border: 1px solid rgba(255,255,255,.07);
+
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition:
+    transform .7s cubic-bezier(.2,.7,.2,1),
+    filter .4s ease;
+
+  filter:
+    saturate(.96)
+    contrast(1.02);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.025);
+
+  filter:
+    saturate(1.03)
+    contrast(1.03);
+}
+
+
+/* IMAGE POSITIONING */
+
+/* Photo 1 */
+.gallery-item:nth-child(1) img {
+  object-position: 50% 43%;
+}
+
+/* Photo 2 */
+.gallery-item:nth-child(2) img {
+  object-position: 50% 50%;
+}
+
+/* Photo 3 */
+.gallery-item:nth-child(3) img {
+  object-position: 50% 50%;
+}
+
+/* Photo 4 */
+.gallery-item:nth-child(4) img {
+  object-position: 50% 42%;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .gallery-item {
+    height: 340px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .gallery-item {
+    height: 300px;
+  }
+
+}
+.gallery-item:nth-child(1) img { object-position:50% 42%; }
+.gallery-item:nth-child(2) img { object-position:center; }
+.gallery-item:nth-child(3) img { object-position:50% 52%; }
+.gallery-item:nth-child(4) img { object-position:50% 42%; }
+.gallery-item:hover img { transform:scale(1.025); filter:saturate(1.03); }
 
 .quote-cta {
   display:flex;
@@ -751,24 +855,26 @@ img { max-width: 100%; display: block; }
   .home-hero { min-height:760px; }
   .split-section { grid-template-columns:1fr; }
   .split-copy { max-width:760px; }
-  .image-frame, .image-frame img { min-height:540px; }
+  .image-frame { height:500px; }
+  .image-frame img { min-height:0; }
   .service-grid { grid-template-columns:1fr; }
   .service-card { display:grid; grid-template-columns:.95fr 1.05fr; }
   .service-photo { min-height:360px; }
-  .gallery-grid { grid-auto-rows:210px; }
+  .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .site-footer { grid-template-columns:1.2fr 1fr 1fr; }
 }
 
 @media (max-width: 720px) {
   .home-hero { min-height:720px; align-items:center; }
-  .home-hero-media { background-position:62% center; }
+  .home-hero-media { background-position:52% 44%; }
   .home-hero-copy { padding-top:70px; padding-bottom:100px; }
   .home-hero h1 { font-size:clamp(52px,14vw,78px); }
   .hero-actions { flex-direction:column; align-items:flex-start; }
   .button { width:100%; max-width:320px; }
   .scroll-cue { display:none; }
   .section-pad { padding:78px 20px; }
-  .image-frame, .image-frame img { min-height:440px; }
+  .image-frame { height:390px; }
+  .image-frame img { min-height:0; }
   .image-badge { width:110px; height:110px; }
   .image-badge strong { font-size:27px; }
   .service-card { grid-template-columns:1fr; }
@@ -776,9 +882,9 @@ img { max-width: 100%; display: block; }
   .service-card-body { min-height:260px; }
   .feature-band { min-height:660px; }
   .feature-band-content { padding:80px 20px; }
-  .gallery-grid { grid-template-columns:1fr; grid-auto-rows:280px; }
-  .gallery-item, .gallery-item:nth-child(2), .gallery-item:nth-child(3), .gallery-item.gallery-wide { grid-column:auto; grid-row:auto; }
-  .gallery-item.gallery-tall { grid-row:auto; }
+  .gallery-grid { grid-template-columns:1fr; gap:12px; }
+  .gallery-item:nth-child(1), .gallery-item:nth-child(2), .gallery-item:nth-child(3), .gallery-item:nth-child(4) { aspect-ratio:auto; }
+  .gallery-item img { height:auto; object-fit:contain; }
   .quote-cta { align-items:flex-start; flex-direction:column; }
   .site-footer { grid-template-columns:1fr 1fr; padding-inline:20px; }
   .footer-brand { grid-column:1 / -1; }
@@ -789,4 +895,31 @@ img { max-width: 100%; display: block; }
   .home-hero-copy { padding-inline:18px; }
   .site-footer { grid-template-columns:1fr; }
   .footer-brand, .footer-bottom { grid-column:auto; }
+}
+
+/* V5 photo-fit refinements */
+/* Handmade tortilla feature: focus on the tortilla-making quadrant of the 4-panel image. */
+.feature-band-bg {
+  background-position: left top;
+}
+
+/* Keep service-card photos visually tied to each service. */
+.service-photo-1 { /* Taco Cart Catering */
+  background-size: cover;
+}
+.service-photo-2 { /* Wedding Catering */
+  background-size: cover;
+}
+.service-photo-3 { /* Private Events */
+  background-size: cover;
+}
+
+@media (max-width: 720px) {
+  .feature-band-bg {
+    background-size: 230% 230%;
+    background-position: 4% 5%;
+  }
+  .image-frame {
+    height: 360px;
+  }
 }
