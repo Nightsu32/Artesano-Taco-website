@@ -1,302 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Artesano Taco catering quote request" />
-  <title>Artesano Taco | Catering Quote</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Artesano Taco — handmade taco catering for weddings, private events and celebrations." />
+  <title>Artesano Taco | Handmade Taco Catering</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Artesano Taco home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-word">Artesano</span>
-        <span class="brand-sub">TACO</span>
-      </a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Artesano Taco home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-word">Artesano</span>
+      <span class="brand-sub">TACO</span>
+    </a>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span><span></span><span></span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span><span class="sr-only">Toggle navigation</span>
+    </button>
 
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#top">Home</a>
-        <a href="#about">About</a>
-        <a href="#menus">Menu</a>
-        <a class="active" href="#quote">Catering</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a class="active" href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="catering.html">Catering</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-      <a class="header-cta" href="#quote">Get a Quote</a>
-    </header>
+    <a class="header-cta" href="catering.html#quote">Get a Quote</a>
+  </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="page-title">
-        <div class="hero-overlay"></div>
-        <div class="hero-food hero-food-left" aria-hidden="true">
-          <span class="lime lime-one"></span>
-          <span class="lime lime-two"></span>
-          <span class="taco taco-one"></span>
-          <span class="taco taco-two"></span>
+  <main id="top">
+    <section class="home-hero">
+      <div class="home-hero-media" aria-hidden="true"></div>
+      <div class="home-hero-vignette" aria-hidden="true"></div>
+      <div class="home-hero-copy reveal">
+        <p class="eyebrow">San Diego • Southern California</p>
+        <h1>Handmade tacos.<br><em>Unforgettable events.</em></h1>
+        <p class="hero-lede">Fresh tortillas made onsite, bold Mexican flavors and warm hospitality for weddings, private celebrations and special events.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="catering.html#quote">Request a Quote</a>
+          <a class="button button-ghost" href="#menu">Explore Catering</a>
         </div>
-        <div class="hero-food hero-food-right" aria-hidden="true">
-          <span class="bowl bowl-green"></span>
-          <span class="bowl bowl-red"></span>
-          <span class="herb herb-one"></span>
-          <span class="herb herb-two"></span>
-        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about section"><span></span>Discover</a>
+    </section>
 
-        <div class="hero-content reveal">
-          <div class="hero-logo">
-            <span class="brand-mark large" aria-hidden="true"></span>
-            <span class="brand-word large">Artesano</span>
-            <span class="brand-sub large">TACO</span>
+    <section id="about" class="split-section section-pad">
+      <div class="split-copy reveal">
+        <p class="eyebrow">The Artesano experience</p>
+        <h2>Food made with craft,<br>served with hospitality.</h2>
+        <p>Artesano Taco brings the energy of an open-air taco stand directly to your event. The focus is simple: fresh ingredients, handmade corn tortillas prepared onsite and a smooth catering experience from setup through service.</p>
+        <p>Whether it is a backyard celebration, wedding or company gathering, the menu is designed around familiar Mexican flavors prepared fresh for your guests.</p>
+        <a class="text-link" href="catering.html">View catering details <span>→</span></a>
+      </div>
+      <div class="split-image image-frame reveal" data-parallax="0.08">
+        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1400&q=85" alt="Fresh tacos prepared for an event" />
+        <div class="image-badge"><strong>Fresh</strong><span>made onsite</span></div>
+      </div>
+    </section>
+
+    <section id="menu" class="service-section section-pad">
+      <div class="section-title reveal">
+        <p class="eyebrow">Catering made for the occasion</p>
+        <h2>Choose your experience.</h2>
+        <p>Start with the event style that fits your celebration. The final menu can be tailored during the quote process.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card reveal">
+          <div class="service-photo service-photo-1"></div>
+          <div class="service-card-body">
+            <span class="service-number">01</span>
+            <h3>Taco Cart Catering</h3>
+            <p>Fresh handmade tortillas, classic proteins, rice, beans, salsas, guacamole and taco accompaniments served onsite.</p>
+            <a href="catering.html#quote">Request catering <span>→</span></a>
           </div>
-          <h1 id="page-title">Catering Quote Request</h1>
-          <p>Real ingredients <span>/</span> Authentic flavors <span>/</span> Unforgettable events</p>
-        </div>
-      </section>
+        </article>
 
-      <section id="quote" class="quote-section">
-        <div class="decor decor-left" aria-hidden="true"></div>
-        <div class="decor decor-right" aria-hidden="true"></div>
-
-        <div class="quote-card reveal">
-          <div class="section-heading">
-            <div class="mini-taco" aria-hidden="true"></div>
-            <h2>Tell Us About Your Event</h2>
-            <p>Fill out the form below and we’ll get back to you with a personalized quote.</p>
+        <article class="service-card reveal">
+          <div class="service-photo service-photo-2"></div>
+          <div class="service-card-body">
+            <span class="service-number">02</span>
+            <h3>Wedding Catering</h3>
+            <p>A more elevated package for wedding celebrations, with premium entree upgrades, appetizers, drinks and dessert options.</p>
+            <a href="catering.html#quote">Plan a wedding <span>→</span></a>
           </div>
+        </article>
 
-          <div class="package-summary" id="packageSummary">
-            <strong>Regular Catering</strong>
-            <span>Current minimum $800 + tax • Approximately $20/person • 30–40 guest starting range</span>
+        <article class="service-card reveal">
+          <div class="service-photo service-photo-3"></div>
+          <div class="service-card-body">
+            <span class="service-number">03</span>
+            <h3>Private Events</h3>
+            <p>Birthdays, graduations, corporate gatherings and special occasions built around fresh food and easy service.</p>
+            <a href="catering.html#quote">Tell us about your event <span>→</span></a>
           </div>
+        </article>
+      </div>
+    </section>
 
-          <form id="cateringForm" class="quote-form" novalidate>
-            <div class="form-grid">
-              <label class="field">
-                <span>First name <b>*</b></span>
-                <input type="text" name="firstName" autocomplete="given-name" placeholder="First name" required />
-              </label>
+    <section class="feature-band">
+      <div class="feature-band-bg" aria-hidden="true"></div>
+      <div class="feature-band-content reveal">
+        <p class="eyebrow">Made in front of your guests</p>
+        <h2>Handmade corn tortillas.<br><em>Always onsite.</em></h2>
+        <p>The tortilla is part of the experience — made fresh during service and paired with grilled proteins, house-made salsa and fresh toppings.</p>
+        <a class="button button-light" href="catering.html#quote">Start Your Quote</a>
+      </div>
+    </section>
 
-              <label class="field">
-                <span>Last name <b>*</b></span>
-                <input type="text" name="lastName" autocomplete="family-name" placeholder="Last name" required />
-              </label>
+    <section id="gallery" class="gallery-section section-pad">
+      <div class="section-title compact reveal">
+        <p class="eyebrow">A taste of Artesano</p>
+        <h2>Fresh food. Real gatherings.</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-tall reveal"><img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1100&q=85" alt="Tacos with fresh toppings"></figure>
+        <figure class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=1100&q=85" alt="Mexican food spread"></figure>
+        <figure class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1570461226513-e08b58a52c53?auto=format&fit=crop&w=1100&q=85" alt="Taco ingredients"></figure>
+        <figure class="gallery-item gallery-wide reveal"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85" alt="Fresh food prepared for guests"></figure>
+      </div>
+    </section>
 
-              <label class="field">
-                <span>Company</span>
-                <input type="text" name="company" autocomplete="organization" placeholder="Company name (optional)" />
-              </label>
-
-              <label class="field">
-                <span>Email <b>*</b></span>
-                <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
-              </label>
-
-              <label class="field">
-                <span>Phone <b>*</b></span>
-                <input type="tel" name="phone" autocomplete="tel" placeholder="(555) 555-5555" required />
-              </label>
-
-              <label class="field">
-                <span>Event date <b>*</b></span>
-                <input type="date" name="eventDate" required />
-              </label>
-
-              <label class="field">
-                <span>Event time <b>*</b></span>
-                <input type="time" name="eventTime" required />
-              </label>
-
-              <label class="field">
-                <span>Event address <b>*</b></span>
-                <input type="text" name="address" autocomplete="street-address" placeholder="123 Main St" required />
-              </label>
-
-              <label class="field">
-                <span>City <b>*</b></span>
-                <input type="text" name="city" autocomplete="address-level2" placeholder="City" required />
-              </label>
-
-              <label class="field split-field">
-                <span>State & ZIP <b>*</b></span>
-                <span class="split-inputs">
-                  <input type="text" name="state" autocomplete="address-level1" placeholder="State" required />
-                  <input type="text" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder="ZIP" required />
-                </span>
-              </label>
-
-              <label class="field">
-                <span>Number of guests <b>*</b></span>
-                <input type="number" name="guests" min="1" placeholder="Approximate guest count" required />
-                <small>Final guest count is required one week before the event.</small>
-              </label>
-
-              <label class="field">
-                <span>Event type <b>*</b></span>
-                <select name="eventType" id="eventType" required>
-                  <option value="" selected disabled>Select event type</option>
-                  <option value="birthday">Birthday</option>
-                  <option value="corporate">Corporate</option>
-                  <option value="wedding">Wedding</option>
-                  <option value="graduation">Graduation</option>
-                  <option value="private">Private party</option>
-                  <option value="other">Other</option>
-                </select>
-              </label>
-
-              <label class="field">
-                <span>Package <b>*</b></span>
-                <select name="package" id="packageSelect" required>
-                  <option value="regular" selected>Regular Catering</option>
-                  <option value="wedding">Wedding Catering</option>
-                </select>
-              </label>
-
-              <label class="field" id="proteinField">
-                <span>Protein preferences</span>
-                <select name="proteins" id="proteinSelect">
-                  <option value="classic">Carne Asada, Pollo Asado & Adobada</option>
-                  <option value="vegetable">Add Vegetable Tacos</option>
-                  <option value="discuss">Help me choose</option>
-                </select>
-              </label>
-
-              <label class="field wedding-only is-hidden" id="weddingUpgradeField">
-                <span>Wedding upgrade</span>
-                <select name="weddingUpgrade">
-                  <option value="none">No premium upgrade</option>
-                  <option value="shrimp">Shrimp (+$5/person)</option>
-                  <option value="mahi">Mahi Mahi (+$5/person)</option>
-                  <option value="portobello">Portobello Fajitas (+$5/person)</option>
-                </select>
-              </label>
-
-              <label class="field wedding-only is-hidden" id="appetizerField">
-                <span>Wedding appetizers</span>
-                <select name="appetizers">
-                  <option value="none">No appetizers</option>
-                  <option value="one">1 choice (+$6/person)</option>
-                  <option value="three">3 choices (+$16/person)</option>
-                </select>
-              </label>
-
-              <label class="field">
-                <span>Beverages</span>
-                <select name="beverages">
-                  <option value="none">No beverage service selected</option>
-                  <option value="agua-fresca">Agua fresca</option>
-                  <option value="canned-soda">Canned sodas</option>
-                  <option value="mexican-soda">Mexican sodas</option>
-                  <option value="discuss">Discuss options with me</option>
-                </select>
-              </label>
-
-              <label class="field">
-                <span>Additional services</span>
-                <input type="text" name="services" placeholder="Dessert, setup details, special requests, etc." />
-              </label>
-
-              <label class="field">
-                <span>How did you hear about us?</span>
-                <select name="referral">
-                  <option value="">Select an option</option>
-                  <option>Google</option>
-                  <option>Instagram</option>
-                  <option>Facebook</option>
-                  <option>Friend / Referral</option>
-                  <option>Previous event</option>
-                  <option>Other</option>
-                </select>
-              </label>
-
-              <label class="field field-full">
-                <span>Questions and comments</span>
-                <textarea name="comments" rows="5" placeholder="Tell us about your event, venue, menu ideas, dietary needs, or anything else we should know..."></textarea>
-              </label>
-            </div>
-
-            <div class="service-notes">
-              <h3>Before you submit</h3>
-              <p>On-site cooking requires an outdoor, ground-level service area of approximately 12 ft × 12 ft. Special venue or park permits, when required, are the client’s responsibility.</p>
-              <p>A quote request does not create a binding catering contract. Service is secured after the required deposit is received.</p>
-            </div>
-
-            <label class="consent-row">
-              <input type="checkbox" name="termsAccepted" required />
-              <span>I understand this is a quote request and I agree to be contacted about my event. <b>*</b></span>
-            </label>
-
-            <div class="form-actions">
-              <button class="submit-btn" type="submit">
-                <span>Submit Request</span>
-                <span aria-hidden="true">→</span>
-              </button>
-              <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <section id="menus" class="menu-preview reveal">
-        <div>
-          <p class="eyebrow">Catering at a glance</p>
-          <h2>Fresh tortillas. Full-service taco catering.</h2>
-          <p>Regular catering includes a three-taco plate with rice and beans, fresh toppings, house-made salsa, guacamole, chips and handmade corn tortillas prepared onsite.</p>
-        </div>
-        <div class="menu-cards">
-          <article>
-            <span>Regular Catering</span>
-            <strong>$800+</strong>
-            <small>Current minimum + tax</small>
-          </article>
-          <article>
-            <span>Wedding Catering</span>
-            <strong>$29</strong>
-            <small>Per person + tax & gratuity • 40-person minimum</small>
-          </article>
-          <article>
-            <span>Service</span>
-            <strong>Up to 2 hrs</strong>
-            <small>Service duration, unless otherwise agreed</small>
-          </article>
-        </div>
-      </section>
-
-      <section id="about" class="simple-section reveal">
-        <p class="eyebrow">Artesano Taco</p>
-        <h2>Made onsite. Built for your event.</h2>
-        <p>Use this area later for the company story, service area, photos, testimonials, or a fuller catering introduction.</p>
-      </section>
-
-      <section id="gallery" class="gallery-strip reveal" aria-label="Gallery placeholder">
-        <div>Fresh tortillas</div>
-        <div>Street tacos</div>
-        <div>Private events</div>
-        <div>Weddings</div>
-      </section>
-    </main>
-
-    <footer id="contact" class="site-footer">
+    <section class="quote-cta section-pad reveal">
       <div>
-        <div class="footer-brand">Artesano Taco</div>
-        <p>Taco hecho a mano.</p>
+        <p class="eyebrow">Let’s plan your event</p>
+        <h2>Bring Artesano Taco<br>to your next celebration.</h2>
       </div>
-      <div class="footer-contact">
-        <a href="tel:+16199959097">619-995-9097</a>
-        <a href="mailto:carlos@artesanotaco.com">carlos@artesanotaco.com</a>
-        <a href="https://www.artesanotaco.com" target="_blank" rel="noopener">ArtesanoTaco.com</a>
-      </div>
-    </footer>
-  </div>
+      <a class="button button-primary" href="catering.html#quote">Get a Catering Quote</a>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="footer-brand">
+      <span class="brand-word">Artesano</span><span class="brand-sub footer-sub">TACO</span>
+      <p>Taco hecho a mano.</p>
+    </div>
+    <div><span class="footer-label">Contact</span><a href="mailto:carlos@artesanotaco.com">carlos@artesanotaco.com</a><a href="tel:+16199959097">619-995-9097</a></div>
+    <div><span class="footer-label">Explore</span><a href="#about">About</a><a href="catering.html">Catering</a><a href="catering.html#quote">Request Quote</a></div>
+    <div class="footer-bottom">© <span id="year"></span> Artesano Taco. Demo redesign.</div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
