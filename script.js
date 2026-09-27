@@ -66,7 +66,7 @@ const weddingOnly = document.querySelectorAll('.wedding-only');
 const summaries = {
   regular: {
     title: 'Regular Catering',
-    copy: 'Current minimum $800 + tax • Approximately $20/person • 30–40 guest starting range'
+    copy: '$20 per person + Tax & Gratuity'
   },
   wedding: {
     title: 'Wedding Catering',
@@ -107,23 +107,18 @@ if (eventDate) {
 
 if (form) {
   form.addEventListener('submit', (event) => {
-    event.preventDefault();
     formStatus?.classList.remove('error');
 
     if (!form.checkValidity()) {
+      event.preventDefault();
+
       if (formStatus) {
-        formStatus.textContent = 'Please complete the required fields before submitting.';
+        formStatus.textContent =
+          'Please complete the required fields before submitting.';
         formStatus.classList.add('error');
       }
+
       form.reportValidity();
-      return;
-    }
-
-    const data = Object.fromEntries(new FormData(form).entries());
-    console.log('DEMO catering quote request:', data);
-
-    if (formStatus) {
-      formStatus.textContent = 'Demo complete — this request is ready to connect to the business email after approval.';
     }
   });
 }

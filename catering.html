@@ -82,8 +82,15 @@
             <span>$20 per person + Tax & Gratuity</span>
           </div>
 
-          <form id="cateringForm" class="quote-form" novalidate>
-            <div class="form-grid">
+          <form
+            id="cateringForm"
+            class="quote-form"
+            name="catering-request"
+            method="POST"
+            data-netlify="true"
+            novalidate
+          >
+              <input type="hidden" name="form-name" value="catering-request">            <div class="form-grid">
               <label class="field">
                 <span>First name <b>*</b></span>
                 <input type="text" name="firstName" autocomplete="given-name" placeholder="First name" required />
