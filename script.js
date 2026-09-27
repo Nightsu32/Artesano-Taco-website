@@ -20,6 +20,7 @@ if (year) year.textContent = new Date().getFullYear();
 
 // Elegant reveal-on-scroll animation used on both pages.
 const revealElements = document.querySelectorAll('.reveal');
+
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -28,27 +29,43 @@ if ('IntersectionObserver' in window) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -35px 0px' });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -35px 0px'
+  });
 
   revealElements.forEach((element) => observer.observe(element));
 } else {
   revealElements.forEach((element) => element.classList.add('visible'));
 }
 
-// Very subtle pointer parallax — no bouncing/cartoon motion.
+// Very subtle pointer parallax.
 const hero = document.querySelector('.home-hero, .hero');
-if (hero && window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+if (
+  hero &&
+  window.matchMedia('(pointer: fine)').matches &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
   let rafId;
+
   hero.addEventListener('pointermove', (event) => {
     const rect = hero.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
-    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 10;
+
+    const x =
+      ((event.clientX - rect.left) / rect.width - 0.5) * 14;
+
+    const y =
+      ((event.clientY - rect.top) / rect.height - 0.5) * 10;
+
     cancelAnimationFrame(rafId);
+
     rafId = requestAnimationFrame(() => {
       hero.style.setProperty('--hero-x', `${x}px`);
       hero.style.setProperty('--hero-y', `${y}px`);
     });
   });
+
   hero.addEventListener('pointerleave', () => {
     hero.style.setProperty('--hero-x', '0px');
     hero.style.setProperty('--hero-y', '0px');
@@ -68,43 +85,75 @@ const summaries = {
     title: 'Regular Catering',
     copy: '$20 per person + Tax & Gratuity'
   },
+
   wedding: {
     title: 'Wedding Catering',
-    copy: '$29/person + tax & gratuity • 40-person minimum • Premium upgrades and appetizers available'
+    copy:
+      '$29/person + tax & gratuity • 40-person minimum • Premium upgrades and appetizers available'
   }
 };
 
 function setPackage(type) {
   if (!packageSelect) return;
-  const isWedding = type === 'wedding';
-  packageSelect.value = isWedding ? 'wedding' : 'regular';
-  weddingOnly.forEach((el) => el.classList.toggle('is-hidden', !isWedding));
+
+  const isWedding =
+    type === 'Wedding Catering' ||
+    type === 'Wedding';
+
+  packageSelect.value =
+    isWedding
+      ? 'Wedding Catering'
+      : 'Regular Catering';
+
+  weddingOnly.forEach((element) => {
+    element.classList.toggle('is-hidden', !isWedding);
+  });
 
   if (packageSummary) {
-    const summary = summaries[isWedding ? 'wedding' : 'regular'];
-    packageSummary.innerHTML = `<strong>${summary.title}</strong><span>${summary.copy}</span>`;
+    const summary =
+      summaries[isWedding ? 'wedding' : 'regular'];
+
+    packageSummary.innerHTML = `
+      <strong>${summary.title}</strong>
+      <span>${summary.copy}</span>
+    `;
   }
 }
 
 if (packageSelect) {
-  packageSelect.addEventListener('change', (event) => setPackage(event.target.value));
+  packageSelect.addEventListener('change', (event) => {
+    setPackage(event.target.value);
+  });
 }
 
 if (eventType) {
   eventType.addEventListener('change', (event) => {
-    if (event.target.value === 'wedding') setPackage('wedding');
+    if (event.target.value === 'Wedding') {
+      setPackage('Wedding Catering');
+    }
   });
 }
 
-const eventDate = form?.querySelector('input[name="eventDate"]');
+// Prevent customers from selecting dates in the past.
+const eventDate =
+  form?.querySelector('input[name="eventDate"]');
+
 if (eventDate) {
   const now = new Date();
+
   const yyyy = now.getFullYear();
-  const mm = String(now.getMonth() + 1).padStart(2, '0');
-  const dd = String(now.getDate()).padStart(2, '0');
+
+  const mm =
+    String(now.getMonth() + 1).padStart(2, '0');
+
+  const dd =
+    String(now.getDate()).padStart(2, '0');
+
   eventDate.min = `${yyyy}-${mm}-${dd}`;
 }
 
+// Form validation.
+// If valid, allow Netlify to submit normally.
 if (form) {
   form.addEventListener('submit', (event) => {
     formStatus?.classList.remove('error');
@@ -115,6 +164,7 @@ if (form) {
       if (formStatus) {
         formStatus.textContent =
           'Please complete the required fields before submitting.';
+
         formStatus.classList.add('error');
       }
 

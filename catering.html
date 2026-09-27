@@ -82,15 +82,9 @@
             <span>$20 per person + Tax & Gratuity</span>
           </div>
 
-          <form
-            id="cateringForm"
-            class="quote-form"
-            name="catering-request"
-            method="POST"
-            data-netlify="true"
-            novalidate
-          >
-              <input type="hidden" name="form-name" value="catering-request">            <div class="form-grid">
+          <form id="cateringForm" class="quote-form" name="catering-request" method="POST" data-netlify="true" novalidate>
+            <input type="hidden" name="form-name" value="catering-request">
+            <div class="form-grid">
               <label class="field">
                 <span>First name <b>*</b></span>
                 <input type="text" name="firstName" autocomplete="given-name" placeholder="First name" required />
@@ -154,60 +148,60 @@
                 <span>Event type <b>*</b></span>
                 <select name="eventType" id="eventType" required>
                   <option value="" selected disabled>Select event type</option>
-                  <option value="birthday">Birthday</option>
-                  <option value="corporate">Corporate</option>
-                  <option value="wedding">Wedding</option>
-                  <option value="graduation">Graduation</option>
-                  <option value="private">Private party</option>
-                  <option value="other">Other</option>
+                  <option value="Birthday">Birthday</option>
+                  <option value="Corporate">Corporate</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Graduation">Graduation</option>
+                  <option value="Private Party">Private party</option>
+                  <option value="Other">Other</option>
                 </select>
               </label>
 
               <label class="field">
                 <span>Package <b>*</b></span>
                 <select name="package" id="packageSelect" required>
-                  <option value="regular" selected>Regular Catering</option>
-                  <option value="wedding">Wedding Catering</option>
+                  <option value="Regular Catering" selected>Regular Catering</option>
+                  <option value="Wedding Catering">Wedding Catering</option>
                 </select>
               </label>
 
               <label class="field" id="proteinField">
                 <span>Protein preferences</span>
                 <select name="proteins" id="proteinSelect">
-                  <option value="classic">No options selected</option>
-                  <option value="classic">Carne Asada, Pollo Asado & Adobada</option>
-                  <option value="classic-vegetarian">3 Meats + Vegetarian</option>
-                  <option value="discuss">Help me choose</option>
+                  <option value="No options selected">No options selected</option>
+                  <option value="Carne Asada, Pollo Asado & Adobada">Carne Asada, Pollo Asado & Adobada</option>
+                  <option value="3 Meats + Vegetarian">3 Meats + Vegetarian</option>
+                  <option value="Help me choose">Help me choose</option>
                 </select>
               </label>
 
               <label class="field wedding-only is-hidden" id="weddingUpgradeField">
                 <span>Wedding upgrade</span>
                 <select name="weddingUpgrade">
-                  <option value="none">No premium upgrade</option>
-                  <option value="shrimp">Shrimp (+$5/person)</option>
-                  <option value="mahi">Mahi Mahi (+$5/person)</option>
-                  <option value="portobello">Portobello Fajitas (+$5/person)</option>
+                  <option value="No premium upgrade">No premium upgrade</option>
+                  <option value="Shrimp (+$5/person)">Shrimp (+$5/person)</option>
+                  <option value="Mahi Mahi (+$5/person)">Mahi Mahi (+$5/person)</option>
+                  <option value="Portobello Fajitas (+$5/person)">Portobello Fajitas (+$5/person)</option>
                 </select>
               </label>
 
               <label class="field wedding-only is-hidden" id="appetizerField">
                 <span>Wedding appetizers</span>
                 <select name="appetizers">
-                  <option value="none">No appetizers</option>
-                  <option value="one">1 choice (+$6/person)</option>
-                  <option value="three">3 choices (+$16/person)</option>
+                  <option value="No appetizers">No appetizers</option>
+                  <option value="1 choice (+$6/person)">1 choice (+$6/person)</option>
+                  <option value="3 choices (+$16/person)">3 choices (+$16/person)</option>
                 </select>
               </label>
 
               <label class="field">
                 <span>Beverages</span>
                 <select name="beverages">
-                  <option value="none">No beverage service selected</option>
-                  <option value="agua-fresca">Seasonal Agua fresca</option>
-                  <option value="canned-soda">Soft Drinks</option>
+                  <option value="No beverage service selected">No beverage service selected</option>
+                  <option value="Seasonal Agua Fresca">Seasonal Agua fresca</option>
+                  <option value="Soft Drinks">Soft Drinks</option>
 
-                  <option value="discuss">Discuss options with me</option>
+                  <option value="Discuss options with me">Discuss options with me</option>
                 </select>
               </label>
 
