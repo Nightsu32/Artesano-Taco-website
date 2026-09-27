@@ -1010,6 +1010,215 @@ img { max-width: 100%; display: block; }
   align-items: start;
 }
 
+/* =========================================================
+   ABOUT FEATURE SECTION
+   ========================================================= */
+
+.about-feature {
+  position: relative;
+
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #02070a;
+}
+
+
+.about-feature-bg {
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  background:
+    url("images/artesano-about.jpg")
+    center 48% / cover no-repeat;
+
+  transform: scale(1.02);
+}
+
+
+/* Dark overlay so text stays readable */
+
+.about-feature-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2,7,10,.97) 0%,
+      rgba(2,7,10,.93) 30%,
+      rgba(2,7,10,.68) 52%,
+      rgba(2,7,10,.22) 78%,
+      rgba(2,7,10,.12) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(2,7,10,.92) 0%,
+      transparent 30%,
+      transparent 75%,
+      rgba(2,7,10,.65) 100%
+    );
+}
+
+
+.about-feature-content {
+  width: min(720px, 100%);
+
+  padding:
+    90px
+    clamp(30px, 6vw, 90px);
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.about-feature-content .eyebrow {
+  margin: 0 0 12px;
+}
+
+
+.about-feature h2 {
+  margin: 0 0 30px;
+
+  font-size:
+    clamp(48px, 6vw, 84px);
+
+  line-height: .96;
+
+  letter-spacing: -.04em;
+}
+
+
+.about-feature h2 em {
+  display: block;
+
+  color: var(--teal);
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-weight: 700;
+
+  font-style: italic;
+}
+
+
+.about-feature-content > p:not(.eyebrow) {
+  max-width: 650px;
+
+  margin: 0 0 18px;
+
+  color: #d3dadd;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+.about-feature-content .about-lede {
+  font-size: 16px;
+
+  color: #eef2f3;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .about-feature {
+    min-height: 600px;
+  }
+
+
+  .about-feature-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2,7,10,.96) 0%,
+        rgba(2,7,10,.87) 52%,
+        rgba(2,7,10,.48) 100%
+      );
+  }
+
+
+  .about-feature-content {
+    width: min(680px, 100%);
+
+    padding:
+      75px 32px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .about-feature {
+    min-height: 680px;
+  }
+
+
+  .about-feature-bg {
+    background-position:
+      64% center;
+  }
+
+
+  .about-feature-overlay {
+    background:
+      linear-gradient(
+        to right,
+        rgba(2,7,10,.96),
+        rgba(2,7,10,.78)
+      );
+  }
+
+
+  .about-feature-content {
+    padding:
+      70px 22px;
+  }
+
+
+  .about-feature h2 {
+    font-size:
+      clamp(42px, 12vw, 58px);
+  }
+
+
+  .about-feature-content > p:not(.eyebrow) {
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+}
+
+/* INDEX ABOUT SECTION */
+
+.split-copy h2 em {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--teal);
+}
 
 @media (max-width: 900px) {
 
@@ -1025,6 +1234,19 @@ img { max-width: 100%; display: block; }
 
 }
 
+/* Better crop for About image */
+
+#about .image-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* pull the useful food/chef area further into view */
+  object-position: 68% 50%;
+
+  transform: scale(1.01);
+}
 
 @media (max-width: 600px) {
 
